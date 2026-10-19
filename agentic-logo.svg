@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 200">
+  <defs>
+    <!-- Gradient spans across both rings, left to right -->
+    <linearGradient id="ringGrad" gradientUnits="userSpaceOnUse" x1="37" y1="100" x2="193" y2="100">
+      <stop offset="0%"   stop-color="#E040FB"/>
+      <stop offset="45%"  stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <!-- Clip: bottom half of overlap zone — brings right ring to front there -->
+    <clipPath id="overlapFront">
+      <rect x="93" y="100" width="57" height="105"/>
+    </clipPath>
+  </defs>
+
+  <!-- Layer 1: right ring (behind) -->
+  <circle cx="143" cy="100" r="50" fill="none" stroke="url(#ringGrad)" stroke-width="13"/>
+
+  <!-- Layer 2: left ring (in front) -->
+  <circle cx="87"  cy="100" r="50" fill="none" stroke="url(#ringGrad)" stroke-width="13"/>
+
+  <!-- Layer 3: right ring clipped to bottom-overlap — creates chain-link interlock -->
+  <circle cx="143" cy="100" r="50" fill="none" stroke="url(#ringGrad)" stroke-width="13"
+          clip-path="url(#overlapFront)"/>
+
+  <!-- "agentic" — bold rounded white -->
+  <text x="225" y="123"
+        font-family="'Nunito Black', Nunito, Poppins, 'Arial Rounded MT Bold', Arial, sans-serif"
+        font-size="80"
+        font-weight="900"
+        fill="white">agentic</text>
+
+  <!-- "PAYMENT PROCESSING .ai" — white + pink accent -->
+  <text x="228" y="158"
+        font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="18"
+        font-weight="400"
+        letter-spacing="5"
+        fill="white">PAYMENT PROCESSING <tspan fill="#E040FB" letter-spacing="1">.ai</tspan></text>
+</svg>
